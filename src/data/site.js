@@ -2,9 +2,9 @@
 
 export const profile = {
   name: "Takudzwa Pablo Magawagawa",
-  title: "Software Developer",
+  title: "Software & Systems Developer",
   bio:
-    "Developer on a CS honours track, focused on web stacks and APIs. I like work that stays understandable after the first deploy.",
+    "Focused on performance, simplicity, and code that lasts beyond the first deploy. I design and build reliable software applications with clean architecture and real-world efficiency in mind. I enjoy turning complex problems into simple, maintainable solutions.",
   email: "takudzwamagawagawa@gmail.com",
   github: "https://github.com/Pablo-Xuba",
   linkedin:

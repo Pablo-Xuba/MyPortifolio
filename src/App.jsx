@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
+import { AmbientEffects } from "./components/effects/AmbientEffects";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
@@ -23,26 +24,29 @@ export default function App() {
 
   return (
     <Motion.div
-      className="min-h-dvh bg-background font-sans text-foreground antialiased"
+      className="cosmic-shell relative min-h-dvh overflow-x-clip font-sans text-foreground antialiased"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={shellTransition(reduced)}
     >
-      <Header name={profile.name} />
-      <main>
-        <Hero profile={profile} />
-        <About paragraphs={aboutParagraphs} />
-        <Skills skills={skills} />
-        <Projects projects={projects} />
-        <EducationExperience education={education} experience={experience} />
-        <Contact profile={profile} />
-      </main>
-      <Footer
-        name={profile.name}
-        github={profile.github}
-        linkedin={profile.linkedin}
-        email={profile.email}
-      />
+      <AmbientEffects reduced={reduced} />
+      <div className="relative z-10">
+        <Header name={profile.name} />
+        <main>
+          <Hero profile={profile} />
+          <About paragraphs={aboutParagraphs} />
+          <Skills skills={skills} />
+          <Projects projects={projects} />
+          <EducationExperience education={education} experience={experience} />
+          <Contact profile={profile} />
+        </main>
+        <Footer
+          name={profile.name}
+          github={profile.github}
+          linkedin={profile.linkedin}
+          email={profile.email}
+        />
+      </div>
     </Motion.div>
   );
 }

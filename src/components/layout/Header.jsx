@@ -12,7 +12,7 @@ const navItems = [
 ];
 
 const navLinkClass =
-  "rounded-md px-2.5 py-1.5 text-[0.8125rem] font-medium text-muted-foreground transition-colors duration-200 hover:bg-background/60 hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:px-3 md:py-2";
+  "relative rounded-md px-2.5 py-1.5 text-[0.875rem] font-medium text-muted-foreground transition-colors duration-200 hover:bg-background/60 hover:text-foreground after:absolute after:bottom-1 after:left-3 after:right-3 after:h-px after:origin-left after:scale-x-0 after:bg-accent/80 after:transition-transform after:duration-200 hover:after:scale-x-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:px-3 md:py-2";
 
 export function Header({ name }) {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ export function Header({ name }) {
       <Container className="flex h-14 items-center justify-between md:h-[3.75rem]">
         <a
           href="#top"
-          className="font-display text-[0.8125rem] font-medium tracking-tight text-foreground transition-colors duration-200 hover:text-accent md:text-sm"
+          className="font-display text-[0.875rem] font-medium tracking-tight text-foreground transition-colors duration-200 hover:text-accent md:text-[0.95rem]"
         >
           {name}
         </a>

@@ -1,10 +1,10 @@
 import { motion as Motion } from "framer-motion";
-import { Container } from "../ui/Container";
-import { BinaryName } from "../ui/BinaryName";
-import { useReducedMotion } from "../../hooks/useReducedMotion";
-import { sectionVariants, itemVariants } from "../../lib/motion";
+import { Container } from "../components/ui/Container";
+import { BinaryName } from "../components/ui/BinaryName";
+import { useReducedMotion } from "../hooks/useReducedMotion";
+import { sectionVariants, itemVariants } from "../lib/motion";
 
-export function Hero({ profile }) {
+export function HeroPage({ profile }) {
   const reduced = useReducedMotion();
 
   return (
