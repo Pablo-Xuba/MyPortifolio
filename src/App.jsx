@@ -1,7 +1,6 @@
 import { motion as Motion } from "framer-motion";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
-import { AmbientEffects } from "./components/effects/AmbientEffects";
 import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
@@ -29,7 +28,6 @@ export default function App() {
       animate={{ opacity: 1 }}
       transition={shellTransition(reduced)}
     >
-      <AmbientEffects reduced={reduced} />
       <div className="relative z-10">
         <Header name={profile.name} />
         <main>

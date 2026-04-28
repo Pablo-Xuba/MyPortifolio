@@ -30,12 +30,6 @@ body {
   margin: 0;
   min-height: 100dvh;
   background-color: var(--background);
-  background-image:
-    radial-gradient(128rem 62rem at 12% -22%, rgba(82, 117, 204, 0.28), transparent 72%),
-    radial-gradient(98rem 52rem at 84% -16%, rgba(90, 125, 214, 0.22), transparent 72%),
-    radial-gradient(84rem 42rem at 55% 118%, rgba(49, 77, 138, 0.3), transparent 74%),
-    radial-gradient(40rem 20rem at 74% 20%, rgba(107, 145, 228, 0.14), transparent 72%),
-    linear-gradient(180deg, #04080f 0%, #060b16 40%, #070c1b 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -46,111 +40,6 @@ body {
 
 #root {
   min-height: 100dvh;
-}
-
-.cosmic-shell::before {
-  content: "";
-  position: fixed;
-  inset: -10% -5%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.3;
-  background:
-    radial-gradient(0.08rem 0.08rem at 17% 19%, rgba(240, 245, 255, 0.88), transparent),
-    radial-gradient(0.06rem 0.06rem at 43% 31%, rgba(224, 235, 255, 0.76), transparent),
-    radial-gradient(0.05rem 0.05rem at 71% 13%, rgba(231, 240, 255, 0.8), transparent),
-    radial-gradient(0.04rem 0.04rem at 86% 42%, rgba(226, 237, 255, 0.67), transparent),
-    radial-gradient(0.06rem 0.06rem at 29% 78%, rgba(235, 243, 255, 0.82), transparent),
-    radial-gradient(0.045rem 0.045rem at 63% 74%, rgba(224, 236, 255, 0.7), transparent);
-  animation: skyDrift 38s linear infinite;
-}
-
-.ambient-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.ambient-stars {
-  position: absolute;
-  inset: 0;
-  opacity: 0.36;
-  background-image:
-    radial-gradient(0.075rem 0.075rem at 18% 10%, rgba(255, 255, 255, 0.95), transparent),
-    radial-gradient(0.065rem 0.065rem at 67% 26%, rgba(255, 255, 255, 0.86), transparent),
-    radial-gradient(0.06rem 0.06rem at 83% 57%, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(0.055rem 0.055rem at 12% 66%, rgba(255, 255, 255, 0.84), transparent),
-    radial-gradient(0.04rem 0.04rem at 51% 82%, rgba(255, 255, 255, 0.76), transparent),
-    radial-gradient(0.05rem 0.05rem at 43% 34%, rgba(211, 225, 255, 0.9), transparent),
-    radial-gradient(0.03rem 0.03rem at 77% 83%, rgba(211, 225, 255, 0.85), transparent),
-    radial-gradient(0.04rem 0.04rem at 57% 58%, rgba(231, 241, 255, 0.72), transparent),
-    radial-gradient(0.032rem 0.032rem at 33% 47%, rgba(226, 238, 255, 0.62), transparent);
-  animation: skyDrift 42s linear infinite reverse, starTwinkle 7s ease-in-out infinite alternate;
-}
-
-.ambient-nebula {
-  position: absolute;
-  inset: 0;
-  opacity: 0.58;
-  background:
-    linear-gradient(116deg, rgba(118, 150, 232, 0) 20%, rgba(129, 156, 231, 0.15) 39%, rgba(146, 178, 249, 0.2) 49%, rgba(129, 156, 231, 0.14) 59%, rgba(118, 150, 232, 0) 80%),
-    radial-gradient(60rem 34rem at 48% 108%, rgba(71, 95, 158, 0.32), transparent 74%),
-    radial-gradient(46rem 27rem at 86% -6%, rgba(105, 141, 231, 0.24), transparent 72%),
-    radial-gradient(52rem 30rem at 6% -4%, rgba(116, 146, 222, 0.21), transparent 77%);
-  filter: blur(1.6px);
-}
-
-.ambient-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(30rem 14rem at 50% 88%, rgba(193, 208, 255, 0.12), transparent 75%),
-    radial-gradient(24rem 10rem at 55% 94%, rgba(121, 156, 255, 0.18), transparent 75%);
-}
-
-.meteor-trails {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  opacity: 0.28;
-  mix-blend-mode: screen;
-}
-
-.meteor-trail {
-  position: absolute;
-  width: 18rem;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(181, 204, 255, 0), rgba(181, 204, 255, 0.9));
-  box-shadow: 0 0 0.65rem rgba(190, 214, 255, 0.6);
-  transform: rotate(-15deg) translate3d(-40rem, 0, 0);
-  animation-name: meteorSweep;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.meteor-trails.is-reduced {
-  opacity: 0.12;
-}
-
-.meteor-trails.is-reduced .meteor-trail {
-  animation: none;
-  transform: rotate(-15deg) translate3d(-8rem, 0, 0);
-}
-
-.orbit-ring {
-  position: absolute;
-  left: 50%;
-  bottom: -24rem;
-  width: 85rem;
-  height: 40rem;
-  transform: translateX(-50%);
-  border: 1px solid rgba(165, 189, 255, 0.14);
-  border-radius: 50%;
-  box-shadow: 0 0 3rem rgba(122, 151, 235, 0.22);
-  opacity: 0.5;
-  animation: orbitBreath 9s ease-in-out infinite alternate;
 }
 
 .binary-name-heading {
@@ -199,209 +88,56 @@ body {
 }
 
 .hero-shell {
-  /* tuning variables */
-  --hero-star-opacity-1: 0.24;
-  --hero-star-opacity-2: 0.33;
-  --hero-twinkle-intensity: 1;
-  --hero-nebula-opacity: 0.56;
-  --hero-planet-opacity: 0.3;
-  --hero-blackhole-glow: 0.56;
-  --hero-speed-multiplier: 1;
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(92rem 42rem at 18% -8%, rgba(101, 39, 255, 0.42), transparent 70%),
+    radial-gradient(88rem 42rem at 82% 8%, rgba(255, 49, 173, 0.28), transparent 72%),
+    radial-gradient(66rem 30rem at 54% 36%, rgba(142, 76, 255, 0.28), transparent 70%),
+    radial-gradient(76rem 35rem at 50% 112%, rgba(75, 170, 255, 0.2), transparent 73%),
+    linear-gradient(180deg, #120424 0%, #14052b 44%, #130527 100%);
 }
 
-.hero-bg-base {
+.hero-shell::before {
+  content: "";
   position: absolute;
   inset: 0;
-  pointer-events: none;
   z-index: 0;
-  overflow: hidden;
+  pointer-events: none;
   background:
-    radial-gradient(92rem 46rem at 78% 18%, rgba(60, 96, 176, 0.24), transparent 74%),
-    radial-gradient(62rem 30rem at 8% 12%, rgba(50, 88, 174, 0.18), transparent 76%),
-    linear-gradient(180deg, rgba(5, 9, 18, 0.78), rgba(4, 8, 16, 0.9));
+    linear-gradient(126deg, rgba(187, 121, 255, 0) 14%, rgba(187, 121, 255, 0.28) 42%, rgba(106, 87, 255, 0) 76%),
+    linear-gradient(56deg, rgba(255, 85, 191, 0) 10%, rgba(255, 85, 191, 0.2) 39%, rgba(255, 85, 191, 0) 73%),
+    radial-gradient(0.09rem 0.09rem at 8% 12%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(0.08rem 0.08rem at 24% 33%, rgba(233, 221, 255, 0.72), transparent),
+    radial-gradient(0.07rem 0.07rem at 41% 22%, rgba(255, 255, 255, 0.62), transparent),
+    radial-gradient(0.1rem 0.1rem at 63% 18%, rgba(198, 215, 255, 0.72), transparent),
+    radial-gradient(0.08rem 0.08rem at 79% 31%, rgba(255, 255, 255, 0.62), transparent),
+    radial-gradient(0.07rem 0.07rem at 88% 12%, rgba(229, 214, 255, 0.56), transparent),
+    radial-gradient(0.08rem 0.08rem at 17% 64%, rgba(255, 169, 227, 0.58), transparent),
+    radial-gradient(0.07rem 0.07rem at 34% 76%, rgba(255, 255, 255, 0.56), transparent),
+    radial-gradient(0.09rem 0.09rem at 57% 68%, rgba(199, 221, 255, 0.62), transparent),
+    radial-gradient(0.08rem 0.08rem at 74% 79%, rgba(255, 196, 241, 0.58), transparent),
+    radial-gradient(0.07rem 0.07rem at 91% 72%, rgba(224, 213, 255, 0.54), transparent);
+  opacity: 0.7;
+  animation: heroStarFieldShift 42s linear infinite;
 }
 
-.hero-stars-layer-1,
-.hero-stars-layer-2 {
-  position: absolute;
-  inset: -5%;
-}
-
-.hero-stars-layer-1 {
-  opacity: var(--hero-star-opacity-1);
-  background-image:
-    radial-gradient(0.03rem 0.03rem at 12% 15%, rgba(234, 243, 255, 0.58), transparent),
-    radial-gradient(0.028rem 0.028rem at 38% 27%, rgba(225, 236, 255, 0.5), transparent),
-    radial-gradient(0.03rem 0.03rem at 66% 14%, rgba(231, 239, 255, 0.53), transparent),
-    radial-gradient(0.026rem 0.026rem at 83% 26%, rgba(220, 233, 255, 0.45), transparent),
-    radial-gradient(0.028rem 0.028rem at 73% 58%, rgba(223, 236, 255, 0.42), transparent),
-    radial-gradient(0.026rem 0.026rem at 56% 76%, rgba(223, 236, 255, 0.38), transparent);
-  animation: heroStarDriftSlow calc(170s * var(--hero-speed-multiplier)) linear infinite;
-}
-
-.hero-stars-layer-2 {
-  opacity: var(--hero-star-opacity-2);
-  background-image:
-    radial-gradient(0.052rem 0.052rem at 72% 22%, rgba(241, 248, 255, 0.82), transparent),
-    radial-gradient(0.044rem 0.044rem at 84% 40%, rgba(236, 245, 255, 0.74), transparent),
-    radial-gradient(0.042rem 0.042rem at 66% 54%, rgba(231, 242, 255, 0.64), transparent),
-    radial-gradient(0.038rem 0.038rem at 89% 67%, rgba(229, 241, 255, 0.56), transparent);
-  animation: heroStarDriftFast calc(96s * var(--hero-speed-multiplier)) linear infinite,
-    heroStarTwinkle calc(10s * var(--hero-speed-multiplier)) ease-in-out infinite alternate;
-}
-
-.hero-nebula {
-  position: absolute;
-  inset: -12% -10% -16%;
-  opacity: var(--hero-nebula-opacity);
-  background:
-    radial-gradient(84rem 38rem at 76% 20%, rgba(83, 124, 220, 0.31), transparent 74%),
-    radial-gradient(64rem 30rem at 14% 8%, rgba(58, 99, 191, 0.22), transparent 75%),
-    radial-gradient(70rem 32rem at 52% 106%, rgba(45, 73, 138, 0.3), transparent 74%);
-  filter: blur(1.6px);
-}
-
-.hero-left-galaxy {
-  position: absolute;
-  left: -6%;
-  top: -10%;
-  bottom: -18%;
-  width: 72%;
-  background:
-    radial-gradient(56rem 27rem at 32% 18%, rgba(136, 171, 246, 0.34), transparent 73%),
-    radial-gradient(50rem 24rem at 22% 54%, rgba(105, 144, 230, 0.27), transparent 73%),
-    radial-gradient(34rem 18rem at 44% 34%, rgba(178, 205, 255, 0.2), transparent 72%),
-    linear-gradient(
-      118deg,
-      rgba(165, 193, 247, 0) 14%,
-      rgba(165, 193, 247, 0.14) 34%,
-      rgba(222, 236, 255, 0.22) 46%,
-      rgba(165, 193, 247, 0.13) 59%,
-      rgba(165, 193, 247, 0) 80%
-    );
-  opacity: 0.92;
-  filter: blur(0.9px);
-  mix-blend-mode: screen;
-  mask-image: linear-gradient(90deg, black 0%, black 86%, transparent 100%);
-  animation: heroLeftGalaxyDrift calc(140s * var(--hero-speed-multiplier)) linear infinite;
-}
-
-.hero-left-galaxy::before {
+.hero-shell::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(0.038rem 0.038rem at 18% 22%, rgba(236, 244, 255, 0.64), transparent),
-    radial-gradient(0.032rem 0.032rem at 27% 29%, rgba(229, 238, 255, 0.56), transparent),
-    radial-gradient(0.03rem 0.03rem at 34% 38%, rgba(224, 235, 255, 0.5), transparent),
-    radial-gradient(0.034rem 0.034rem at 22% 51%, rgba(228, 238, 255, 0.58), transparent),
-    radial-gradient(0.03rem 0.03rem at 39% 63%, rgba(221, 233, 255, 0.46), transparent),
-    radial-gradient(0.026rem 0.026rem at 31% 72%, rgba(220, 233, 255, 0.42), transparent);
-  opacity: 0.82;
-}
-
-.hero-planets {
-  position: absolute;
-  inset: 0;
-  opacity: var(--hero-planet-opacity);
-}
-
-.hero-planet {
-  position: absolute;
-  border-radius: 999px;
-}
-
-.hero-planet-a {
-  right: 24%;
-  top: 14%;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: radial-gradient(circle at 32% 30%, rgba(187, 205, 240, 0.32), rgba(109, 133, 188, 0.16) 46%, rgba(40, 58, 100, 0.06) 72%, rgba(22, 36, 69, 0) 100%);
-  box-shadow: 0 0 2rem rgba(112, 137, 189, 0.22);
-}
-
-.hero-planet-b {
-  right: 6%;
-  top: 32%;
-  width: 3.6rem;
-  height: 3.6rem;
-  background: radial-gradient(circle at 34% 34%, rgba(170, 195, 235, 0.26), rgba(94, 121, 181, 0.14) 46%, rgba(34, 52, 94, 0.06) 72%, rgba(14, 24, 46, 0) 100%);
-  box-shadow: 0 0 1.6rem rgba(101, 129, 190, 0.17);
-}
-
-.hero-planet-c {
-  right: 16%;
-  bottom: 18%;
-  width: 2.7rem;
-  height: 2.7rem;
-  background: radial-gradient(circle at 35% 36%, rgba(168, 193, 231, 0.22), rgba(77, 102, 157, 0.12) 46%, rgba(28, 44, 85, 0.05) 72%, rgba(14, 24, 46, 0) 100%);
-  box-shadow: 0 0 1.2rem rgba(97, 126, 182, 0.14);
-}
-
-.hero-spaceship {
-  position: absolute;
-  right: 30%;
-  top: 23%;
-  width: 0.95rem;
-  height: 0.33rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(215, 227, 251, 0.06), rgba(226, 236, 255, 0.32), rgba(215, 227, 251, 0.07));
-  box-shadow: 0 0 0.42rem rgba(201, 220, 255, 0.18);
-  transform: rotate(-14deg);
-  opacity: 0.5;
-}
-
-.hero-spaceship::before {
-  content: "";
-  position: absolute;
-  left: -0.66rem;
-  top: 50%;
-  width: 0.72rem;
-  height: 0.08rem;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, rgba(112, 201, 255, 0.16), rgba(112, 201, 255, 0));
-  filter: blur(0.16rem);
-}
-
-.hero-blackhole {
-  position: absolute;
-  inset: 8% -8% 20% 59%;
-  mask-image: radial-gradient(circle at 50% 50%, black 0 48%, transparent 80%);
-}
-
-.hero-blackhole::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0 18%, rgba(4, 8, 16, 1) 28%, rgba(214, 225, 244, 0.54) 29%, rgba(162, 182, 217, 0.31) 34%, rgba(90, 111, 155, 0.11) 41%, rgba(14, 24, 46, 0) 63%),
-    radial-gradient(58% 46% at 39% 36%, rgba(237, 244, 255, 0.12), rgba(237, 244, 255, 0) 70%),
-    radial-gradient(62% 52% at 66% 61%, rgba(222, 233, 252, 0.09), rgba(222, 233, 252, 0) 72%);
-  opacity: 0.68;
-  transform: rotate(-10deg) scale(1.03);
-  animation: heroBlackholeSpin calc(72s * var(--hero-speed-multiplier)) linear infinite;
-}
-
-.hero-blackhole::after {
-  content: "";
-  position: absolute;
-  inset: 10% 9%;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0 24%, rgba(5, 8, 16, 0.96) 34%, rgba(220, 232, 252, 0.26) 37%, rgba(154, 176, 219, 0.1) 42%, rgba(13, 22, 40, 0) 62%),
-    radial-gradient(44% 38% at 40% 64%, rgba(240, 247, 255, 0.11), rgba(240, 247, 255, 0) 74%);
-  opacity: var(--hero-blackhole-glow);
-  transform: scale(1.03);
-  animation: heroBlackholePulse calc(11s * var(--hero-speed-multiplier)) ease-in-out infinite alternate;
-}
-
-.hero-content-scrim {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(95deg, rgba(5, 9, 18, 0.72) 0%, rgba(5, 9, 18, 0.56) 34%, rgba(5, 9, 18, 0.14) 62%, rgba(5, 9, 18, 0) 82%),
-    linear-gradient(180deg, rgba(4, 8, 16, 0.22), rgba(4, 8, 16, 0.5));
+    radial-gradient(2.1rem 1.55rem at 13% 15%, rgba(173, 226, 255, 0.44), transparent 72%),
+    radial-gradient(7.2rem 7.2rem at 13% 18%, rgba(33, 78, 166, 0.95) 0 38%, rgba(20, 51, 116, 0.96) 56%, rgba(12, 30, 74, 0.5) 64%, rgba(12, 30, 74, 0) 74%),
+    radial-gradient(1.75rem 1.3rem at 84% 20%, rgba(209, 152, 255, 0.45), transparent 72%),
+    radial-gradient(6.1rem 6.1rem at 84% 23%, rgba(60, 84, 181, 0.95) 0 38%, rgba(38, 55, 132, 0.96) 56%, rgba(20, 31, 83, 0.5) 64%, rgba(20, 31, 83, 0) 74%),
+    radial-gradient(1.6rem 1.15rem at 90% 64%, rgba(149, 218, 255, 0.36), transparent 74%),
+    radial-gradient(5rem 5rem at 90% 67%, rgba(28, 94, 163, 0.94) 0 40%, rgba(15, 55, 102, 0.95) 58%, rgba(11, 37, 76, 0.48) 66%, rgba(11, 37, 76, 0) 76%),
+    radial-gradient(58rem 14rem at 50% 102%, rgba(96, 154, 255, 0.3), transparent 74%),
+    radial-gradient(52rem 12rem at 50% 104%, rgba(255, 88, 188, 0.26), transparent 74%),
+    linear-gradient(180deg, rgba(14, 5, 30, 0) 50%, rgba(9, 4, 22, 0.54) 100%);
 }
 
 .hero-content {
@@ -419,17 +155,16 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border: 1px solid rgba(124, 149, 190, 0.22);
+  border: 1px solid rgba(122, 95, 255, 0.34);
   border-radius: 1.15rem;
   background:
-    linear-gradient(160deg, rgba(30, 44, 78, 0.36), rgba(10, 18, 36, 0.3)),
-    radial-gradient(130% 90% at 78% 12%, rgba(150, 172, 226, 0.12), transparent 60%),
-    radial-gradient(120% 110% at 20% 100%, rgba(72, 102, 170, 0.18), transparent 68%);
-  backdrop-filter: blur(8px) saturate(1.18);
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.97) 0 17%, rgba(6, 10, 27, 0.98) 30%, rgba(132, 90, 255, 0.36) 35%, rgba(88, 158, 255, 0.2) 44%, rgba(14, 20, 51, 0.92) 62%, rgba(8, 12, 33, 0.96) 100%),
+    linear-gradient(165deg, rgba(24, 16, 56, 0.52), rgba(7, 11, 28, 0.86));
+  backdrop-filter: blur(8px) saturate(1.2);
   box-shadow:
-    0 0 0 1px rgba(170, 188, 229, 0.09) inset,
-    0 10px 22px rgba(11, 20, 42, 0.26),
-    0 28px 44px rgba(2, 6, 18, 0.42);
+    0 0 0 1px rgba(173, 149, 255, 0.18) inset,
+    0 0 3.2rem rgba(124, 89, 255, 0.24),
+    0 14px 30px rgba(6, 9, 28, 0.45);
   transform: rotateY(-5deg) rotateX(2.5deg);
   padding: 0.95rem 1rem 1.2rem;
 }
@@ -437,12 +172,20 @@ body {
 .hero-terminal::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -26% -12%;
   background:
-    linear-gradient(90deg, rgba(116, 141, 204, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(116, 141, 204, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.14;
+    conic-gradient(
+      from 210deg at 50% 50%,
+      rgba(175, 125, 255, 0) 0deg,
+      rgba(175, 125, 255, 0.38) 78deg,
+      rgba(109, 182, 255, 0.34) 158deg,
+      rgba(175, 125, 255, 0.3) 236deg,
+      rgba(175, 125, 255, 0) 360deg
+    );
+  mask-image: radial-gradient(circle at 50% 50%, transparent 0 26%, black 34%, black 46%, transparent 62%);
+  opacity: 0.72;
+  filter: blur(1.1px);
+  animation: terminalBlackholeAccretion 16s linear infinite;
   pointer-events: none;
 }
 
@@ -450,14 +193,16 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 22%, rgba(255, 255, 255, 0) 44%);
-  opacity: 0.26;
+  background:
+    radial-gradient(120% 90% at 50% 50%, rgba(0, 0, 0, 0) 28%, rgba(4, 7, 20, 0.34) 70%, rgba(2, 4, 13, 0.72) 100%),
+    linear-gradient(120deg, rgba(228, 209, 255, 0.16) 0%, rgba(228, 209, 255, 0.06) 22%, rgba(228, 209, 255, 0) 44%);
+  opacity: 0.75;
   pointer-events: none;
 }
 
 .hero-terminal-dots {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -469,7 +214,7 @@ body {
   height: 0.7rem;
   border-radius: 999px;
   box-shadow: 0 0 0.45rem currentColor;
-  animation: terminalDotPulse calc(2.4s * var(--hero-speed-multiplier)) ease-in-out infinite;
+  animation: terminalDotPulse 2.4s ease-in-out infinite;
 }
 
 .hero-terminal-dot-red {
@@ -491,150 +236,42 @@ body {
 
 .hero-terminal-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 0.54rem;
   font-family: "IBM Plex Mono", "Fira Code", "JetBrains Mono", monospace;
-  color: #d3ebff;
+  color: #d8e7ff;
 }
 
 .hero-terminal-command {
   margin: 0.3rem 0 0;
-  color: #87f2a6;
+  color: #71f5df;
   font-size: 0.82rem;
   font-weight: 600;
 }
 
 .hero-terminal-response {
   margin: 0;
-  color: #ecf3ff;
+  color: #eef2ff;
   font-size: 0.9rem;
   line-height: 1.52;
 }
 
-.hero-reduced-motion .hero-stars-layer-1,
-.hero-reduced-motion .hero-stars-layer-2,
-.hero-reduced-motion .hero-galaxy-dust,
-.hero-reduced-motion .hero-left-galaxy,
-.hero-reduced-motion .hero-blackhole::before,
-.hero-reduced-motion .hero-blackhole::after,
 .hero-reduced-motion .hero-terminal-dot {
   animation: none !important;
 }
 
+.hero-reduced-motion.hero-shell::before {
+  animation: none;
+}
+
+.hero-reduced-motion .hero-terminal::before {
+  animation: none;
+}
+
 .hero-reduced-motion .hero-terminal {
   transform: none;
-}
-
-@keyframes meteorSweep {
-  0% {
-    transform: rotate(-15deg) translate3d(-42rem, 0, 0);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.95;
-  }
-  100% {
-    transform: rotate(-15deg) translate3d(118vw, 0, 0);
-    opacity: 0;
-  }
-}
-
-@keyframes skyDrift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-5%, 3%, 0);
-  }
-}
-
-@keyframes orbitBreath {
-  from {
-    opacity: 0.35;
-    transform: translateX(-50%) scale(0.985);
-  }
-  to {
-    opacity: 0.6;
-    transform: translateX(-50%) scale(1.015);
-  }
-}
-
-@keyframes starTwinkle {
-  from {
-    filter: brightness(0.82);
-  }
-  to {
-    filter: brightness(1.16);
-  }
-}
-
-@keyframes heroStarDriftSlow {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-2%, 1.2%, 0);
-  }
-}
-
-@keyframes heroStarDriftFast {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-4%, 2%, 0);
-  }
-}
-
-@keyframes heroStarTwinkle {
-  from {
-    opacity: calc(var(--hero-star-opacity-2) * 0.72 * var(--hero-twinkle-intensity));
-    filter: brightness(0.86);
-  }
-  to {
-    opacity: calc(var(--hero-star-opacity-2) * 1.08 * var(--hero-twinkle-intensity));
-    filter: brightness(1.14);
-  }
-}
-
-@keyframes heroDustFloat {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-6%, 2%, 0);
-  }
-}
-
-@keyframes heroLeftGalaxyDrift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-4%, 1.8%, 0);
-  }
-}
-
-@keyframes heroBlackholeSpin {
-  from {
-    transform: rotate(-10deg) scale(1.03);
-  }
-  to {
-    transform: rotate(350deg) scale(1.03);
-  }
-}
-
-@keyframes heroBlackholePulse {
-  from {
-    opacity: calc(var(--hero-blackhole-glow) - 0.12);
-    transform: scale(1);
-  }
-  to {
-    opacity: var(--hero-blackhole-glow);
-    transform: scale(1.05);
-  }
 }
 
 @keyframes terminalDotPulse {
@@ -649,22 +286,27 @@ body {
   }
 }
 
+@keyframes heroStarFieldShift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-2%, 1.5%, 0);
+  }
+}
+
+@keyframes terminalBlackholeAccretion {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.02);
+  }
+}
+
 @media (max-width: 640px) {
   .binary-name-mask-line {
     font-size: 84px;
-  }
-
-  .hero-blackhole {
-    inset: 16% -28% 42% 70%;
-  }
-
-  .hero-planet,
-  .hero-spaceship {
-    display: none;
-  }
-
-  .hero-stars-layer-2 {
-    opacity: 0.2;
   }
 }
 

@@ -12,21 +12,6 @@ export function Hero({ profile }) {
       id="top"
       className={`hero-shell relative overflow-hidden pt-[6.5rem] md:pt-32${reduced ? " hero-reduced-motion" : ""}`}
     >
-      <div className="hero-bg-base" aria-hidden>
-        <div className="hero-stars-layer-1" />
-        <div className="hero-stars-layer-2" />
-        <div className="hero-nebula" />
-        <div className="hero-planets">
-          <span className="hero-planet hero-planet-a" />
-          <span className="hero-planet hero-planet-b" />
-          <span className="hero-planet hero-planet-c" />
-        </div>
-        <div className="hero-spaceship" />
-        <div className="hero-blackhole" />
-        <div className="hero-content-scrim" />
-        <div className="hero-left-galaxy" />
-      </div>
-
       <Container className="pb-28 md:pb-36">
         <Motion.div
           className="hero-content grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,26rem)] lg:gap-10 xl:gap-14"
